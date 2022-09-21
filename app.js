@@ -34,7 +34,28 @@ function submitDataOfUser(){
     const lastNameOfUser = $("#lastname").val()//hashtag na ffrente é pq é Id
     const ageOfUser = $("#age").val()
 
+   $.ajax({//função que vem do jQuery por padrao
+    "url":"http://localhost:8000/insert-data",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/JSON; charset=UTF-8"
+        },
+        "data":JSON.stringify({//passa a estrutura do meu dado, API que eu iz
+            name:nameOfUser,
+            lastName: lastNameOfUser,
+            age: ageOfUser
+        })
+   }).done(function(response){
+
+    if(response.success){
+        alert('Deu boa :)')
+    }
+
+    });
+
     console.log(nameOfUser)
     console.log(lastNameOfUser)
     console.log(ageOfUser)
 }
+
