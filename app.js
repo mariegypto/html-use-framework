@@ -16,7 +16,7 @@ function requestOfServer() {
 }
 
 function requestOfServerPost(){
-    $.ajax({
+    $.ajax({//fazer requests assincronas na pagina
         type: 'post',
         url: "http://localhost:8000/hello-rota?info=Posting"
     }).done(function(data){
@@ -49,13 +49,12 @@ function submitDataOfUser(){
    }).done(function(response){
 
     if(response.success){
-        alert('Deu boa :)')
+        $("#success-record-msg").css('display','block')
+        $("#name").val('')
+        $("#lastname").val('')
+        $("#age").val('')
     }
 
     });
-
-    console.log(nameOfUser)
-    console.log(lastNameOfUser)
-    console.log(ageOfUser)
 }
 
