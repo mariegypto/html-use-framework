@@ -16,7 +16,7 @@ function requestOfServer() {
 }
 
 function requestOfServerPost(){
-    $.ajax({//fazer requests assincronas na pagina
+    $.ajax({//Ajax: fazer requests assincronas na pagina
         type: 'post',
         url: "http://localhost:8000/hello-rota?info=Posting"
     }).done(function(data){
@@ -39,16 +39,16 @@ function submitDataOfUser(){
         "method": "POST",
         "timeout": 0,
         "headers": {
-            "Content-Type": "application/JSON; charset=UTF-8"
+            "Content-Type": "application/json; charset=UTF-8"
         },
-        "data":JSON.stringify({//passa a estrutura do meu dado, API que eu iz
+        "data": JSON.stringify({//passa a estrutura do meu dado, API que eu iz
             name:nameOfUser,
             lastName: lastNameOfUser,
             age: ageOfUser
         })
    }).done(function(response){
 
-    if(response.success){
+    if (response.success) {
         $("#success-record-msg").css('display','block')
         $("#name").val('')
         $("#lastname").val('')

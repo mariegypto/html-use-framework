@@ -52,6 +52,6 @@ footer > span {
     margin-right: auto;
 }
 
-.success-record-msg{
+#success-record-msg{
     display:none;
 }
