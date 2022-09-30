@@ -43,7 +43,7 @@ function submitDataOfUser(){
         },
         "data": JSON.stringify({//passa a estrutura do meu dado, API que eu iz
             name:nameOfUser,
-            lastName: lastNameOfUser,
+            last_name: lastNameOfUser,
             age: ageOfUser
         })
    }).done(function(response){
@@ -53,8 +53,12 @@ function submitDataOfUser(){
         $("#name").val('')
         $("#lastname").val('')
         $("#age").val('')
+    } else {
+        console.log(response);
+        alert('Deu ruim');
     }
 
     });
 }
+
 
