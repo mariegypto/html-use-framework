@@ -52,6 +52,63 @@ footer > span {
     margin-right: auto;
 }
 
-#success-record-msg{
-    display:none;
+.success-record > div{
+    display: inline-block; 
+    position: relative; 
+    top: -15px
 }
+
+.success-record > div > svg {
+    display: inline-block; 
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+}
+
+#success-record-msg{
+    display: none;
+}
+
+.error-record{
+    text-align: center;
+    font-weight: 700;
+    color: rgb(105, 24, 24);
+    padding: 5px;
+    width: 350px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background-color: #c76d6d;
+}
+
+.error-record > div{
+    display: inline-block; 
+    position: relative; 
+    top: -15px
+}
+
+.error-record > div > svg {
+    display: inline-block; 
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+}
+
+#error-record-msg{
+    display: none;
+}
+
+.content-error-record-msg{
+    text-align: center;
+    font-weight: 700;
+    color: rgb(105, 24, 24);
+    padding: 5px;
+    width: 350px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background-color: #c76d6d;
+}
+

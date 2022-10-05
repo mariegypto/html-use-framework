@@ -54,11 +54,44 @@ function submitDataOfUser(){
         $("#lastname").val('')
         $("#age").val('')
     } else {
-        console.log(response);
-        alert('Deu ruim');
+
+        let errorMsg;
+        /*
+        if(response.missingAttribute === 'name'){
+            errorMsg = 'Preencha o nome'
+        } else 
+            if(response.missingAttribute === 'last_name'){
+                errorMsg = 'Preencha o sobrenome'
+            } else 
+                if(response.missingAttribute === 'age'){
+                    errorMsg = 'Preencha o age'
+                }
+        */
+        console.log(response)
+        if(response.missingAttribute === 'name'){
+            errorMsg = 'Preencha o nome'
+        }
+
+        if(response.missingAttribute === 'last_name'){
+            errorMsg = 'Preencha o sobrenome'
+        }
+        
+        if(response.missingAttribute === 'age'){
+            errorMsg = 'Preencha o age'
+        }
+
+        $("#error-record-msg").css('display','block')
+        $("#content-error-record-msg").html(errorMsg)
     }
 
     });
+}
+
+function closeSuccessMsg(){
+    $("#success-record-msg").css('display','none')
+}
+function closeErrorMsg(){
+    $("#error-record-msg").css('display','none')
 }
 
 
