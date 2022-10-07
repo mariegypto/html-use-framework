@@ -50,6 +50,7 @@ function submitDataOfUser(){
 
     if (response.success) {
         $("#success-record-msg").css('display','block')
+        $("#error-record-msg").css('display','none')
         $("#name").val('')
         $("#lastname").val('')
         $("#age").val('')
@@ -68,6 +69,7 @@ function submitDataOfUser(){
                 }
         */
         console.log(response)
+
         if(response.missingAttribute === 'name'){
             errorMsg = 'Preencha o nome'
         }
@@ -81,6 +83,7 @@ function submitDataOfUser(){
         }
 
         $("#error-record-msg").css('display','block')
+        $("#success-record-msg").css('display','none')
         $("#content-error-record-msg").html(errorMsg)
     }
 
