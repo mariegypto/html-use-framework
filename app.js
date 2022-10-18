@@ -31,11 +31,11 @@ function requestOfServerPost(){
 
 function submitDataOfUser(){
     const nameOfUser = $("#name").val()
-    const lastNameOfUser = $("#lastname").val()//hashtag na ffrente é pq é Id
+    const lastNameOfUser = $("#lastname").val()//hashtag na frente é pq é Id
     const ageOfUser = $("#age").val()
 
    $.ajax({//função que vem do jQuery por padrao
-    "url":"http://localhost:8000/insert-data",
+    "url":"http://localhost:8001/insert-data",
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -68,7 +68,7 @@ function submitDataOfUser(){
                     errorMsg = 'Preencha o age'
                 }
         */
-        console.log(response)
+        console.log(response);
 
         if(response.missingAttribute === 'name'){
             errorMsg = 'Preencha o nome'
@@ -79,7 +79,7 @@ function submitDataOfUser(){
         }
         
         if(response.missingAttribute === 'age'){
-            errorMsg = 'Preencha o age'
+            errorMsg = 'Preencha a idade'
         }
 
         $("#error-record-msg").css('display','block')
